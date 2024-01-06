@@ -15,12 +15,15 @@ class Player extends GameObject {
 		this.velocity = new BABYLON.Vector3(0, 0);
 		this.setupInputs();
 
-		// Create the player object - a 1 unit square cube
-		const boxOptions = { width: 1, height: 1, depth: 1 };
-		this.playerMesh = BABYLON.MeshBuilder.CreateBox("bird", boxOptions, scene);
-		this.playerMaterial = new BABYLON.StandardMaterial("Player Material", scene);
-		this.playerMesh.material = this.playerMaterial;
-		this.playerMesh.material.diffuseColor = BABYLON.Color3.White();
+		// Create the player object - a Torus Knot
+const torusKnotOptions = { radius: 0.5, tube: 0.2, radialSegments: 128, tubularSegments: 64, p: 2, q: 3 };
+this.playerMesh = BABYLON.MeshBuilder.CreateTorusKnot("player", torusKnotOptions, scene);
+
+// Set up the player material
+this.playerMaterial = new BABYLON.StandardMaterial("Player Material", scene);
+this.playerMesh.material = this.playerMaterial;
+this.playerMesh.material.diffuseColor = BABYLON.Color3.White();
+
 	}
 
 	onDestroy() {

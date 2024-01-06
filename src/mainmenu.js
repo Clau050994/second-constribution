@@ -87,42 +87,55 @@ class MainMenu extends GameObject {
 
 	showUI() {
 		let greeting = this.getGreeting();
-
-		// Create a Text Block that can display the current score
+	
+		// Common font style
+		const commonFontFamily = "Impact";
+	
+		// Welcome Text - Make it bright and engaging
 		this.welcomeText = new BABYLON.GUI.TextBlock();
 		this.welcomeText.text = "Flying Cube Game!";
-		this.welcomeText.fontFamily = "Impact";
-		this.welcomeText.color = "white";
-		this.welcomeText.fontSize = 72;
+		this.welcomeText.fontFamily = commonFontFamily;
+		this.welcomeText.color = "#00FF00"; // Bright Green
+		this.welcomeText.fontSize = "6%";
+		this.welcomeText.shadowColor = "black";
+		this.welcomeText.shadowOffsetX = 2;
+		this.welcomeText.shadowOffsetY = 2;
 		this.welcomeText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 		this.welcomeText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
-		this.welcomeText.width = 0.5;
-		this.welcomeText.height = 0.6;
-
+		this.welcomeText.top = "2%";
+	
+		// Greeting Text - Use a color that stands out
 		this.greetingText = new BABYLON.GUI.TextBlock();
 		this.greetingText.text = greeting;
-		this.greetingText.fontFamily = "Impact";
-		this.greetingText.color = "white";
-		this.greetingText.fontSize = 28;
+		this.greetingText.fontFamily = commonFontFamily;
+		this.greetingText.color = "#FFD700"; // Gold
+		this.greetingText.fontSize = "3%";
+		this.greetingText.shadowColor = "black";
+		this.greetingText.shadowOffsetX = 1;
+		this.greetingText.shadowOffsetY = 1;
 		this.greetingText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 		this.greetingText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
-		this.greetingText.width = 0.5;
-		this.greetingText.height = 0.7;
-
+		this.greetingText.top = "10%";
+	
+		// Instructions Text - Bright and clear
 		this.instructionsText = new BABYLON.GUI.TextBlock();
-		this.instructionsText.text = "press any key to play";
-		this.instructionsText.fontFamily = "Impact";
-		this.instructionsText.color = "#aafffa";
-		this.instructionsText.fontSize = 32;
+		this.instructionsText.text = "Press any key to play";
+		this.instructionsText.fontFamily = commonFontFamily;
+		this.instructionsText.color = "#FF4500"; // Bright Orange
+		this.instructionsText.fontSize = "4%";
+		this.instructionsText.shadowColor = "black";
+		this.instructionsText.shadowOffsetX = 1;
+		this.instructionsText.shadowOffsetY = 1;
 		this.instructionsText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 		this.instructionsText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
-		this.instructionsText.width = 0.5;
-		this.instructionsText.height = 0.9;
-
+		this.instructionsText.top = "18%";
+	
+		// Adding controls to HUD texture
 		this.hudTexture.addControl(this.welcomeText);
 		this.hudTexture.addControl(this.greetingText);
 		this.hudTexture.addControl(this.instructionsText);
 	}
+	
 
 	hideUI() {
 		this.hudTexture.removeControl(this.welcomeText);

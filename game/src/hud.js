@@ -5,6 +5,7 @@ var createHud = function () {
 	var hudTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
 	scoreText = new BABYLON.GUI.TextBlock();
+
 scoreText.fontFamily = "Arial, Helvetica, sans-serif"; // More professional font
 scoreText.color = "white";
 scoreText.fontSize = "4%"; // Responsive font size
@@ -16,6 +17,7 @@ scoreText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 scoreText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
 scoreText.width = 0.5;
 scoreText.height = 0.15;
+
 
 
 	updateScoreText();
